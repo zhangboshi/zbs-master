@@ -15,6 +15,7 @@ public class ZbsMasterApplication {
         System.out.println("hello git 4");
         System.out.println("hot fix test");
         System.out.println("master test");
+        System.out.println("master remote");
     }
 
 }
