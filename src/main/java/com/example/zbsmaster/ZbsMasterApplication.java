@@ -13,6 +13,7 @@ public class ZbsMasterApplication {
     public static void main(String[] args) {
         SpringApplication.run(ZbsMasterApplication.class, args);
         System.out.println("hello git 4");
+        System.out.println("hot fix test");
         System.out.println("master test");
     }
 
