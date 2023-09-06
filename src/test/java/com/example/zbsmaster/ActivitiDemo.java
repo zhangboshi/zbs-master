@@ -35,7 +35,7 @@ public class ActivitiDemo {
         Deployment deploy = repositoryService.createDeployment()
                 .addClasspathResource("processes/Leave.bpmn20.xml")
                 .addClasspathResource("processes/Leave.png")
-                .name("请假流程")
+                .name("请假流程1")
                 .deploy();
         System.out.println("流程部署ID："+deploy.getId());
         System.out.println("流程部署名称："+deploy.getName());
@@ -49,6 +49,8 @@ public class ActivitiDemo {
         ProcessEngine processEngine = ProcessEngines.getDefaultProcessEngine();
         RuntimeService runtimeService = processEngine.getRuntimeService();
         ProcessInstance processInstance = runtimeService.startProcessInstanceByKey("Level");
+        Map<String, Object> map = new HashMap<>();
+        map.put("",new Evection(3d));
         System.out.println("流程定义id："+processInstance.getProcessDefinitionId());
         System.out.println("流程实例id："+processInstance.getId());
         System.out.println("当前活动id："+processInstance.getActivityId());
@@ -196,9 +198,9 @@ public class ActivitiDemo {
         RuntimeService runtimeService = defaultProcessEngine.getRuntimeService();
         Map<String, Object> variables = new HashMap<>();
         Evection evection = new Evection();
-        evection.setDay(2d);
+        evection.setDay(3d);
         variables.put("evection",evection);
-        variables.put("employee","张三");
+        variables.put("employee","张si");
         variables.put("TeamLeader","里斯");
         variables.put("Manager","五一");
         runtimeService.startProcessInstanceByKey("Level",variables);
@@ -208,8 +210,8 @@ public class ActivitiDemo {
      */
     @Test
     public void completeTaskByVariables(){
-        completeTask("张三");
-        completeTask("里斯");
+//        completeTask("张si");
+//        completeTask("里斯");
         completeTask("五一");
     }
     private void completeTask(String assignee){

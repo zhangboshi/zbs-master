@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/processdef">
+  <process id="Process" name="Process" isExecutable="true">
+    <startEvent id="sid-088114e3-0200-407e-a816-1a4754d971a2"/>
+    <userTask id="sid-5d627f9a-4ccb-46c6-a8a9-aeec96cd19f0" activiti:assignee="${node1}" name="流程提交者"/>
+    <userTask id="sid-3150fd84-1990-4493-838f-f36593f7115e" activiti:assignee="${node2}" name="初审"/>
+    <userTask id="sid-fad98b1e-5a4a-4aee-b350-3818b5b97546" activiti:assignee="${node3}" name="终审"/>
+    <endEvent id="sid-be3f09bc-c8b2-4fc0-af21-756abccd56ad"/>
+    <sequenceFlow id="sid-db19e6db-eb98-419b-bda1-d7492f8b91c3" sourceRef="sid-088114e3-0200-407e-a816-1a4754d971a2" targetRef="sid-5d627f9a-4ccb-46c6-a8a9-aeec96cd19f0"/>
+    <sequenceFlow id="sid-465a9dac-4d1b-4035-8d5e-22f43ce50aa3" sourceRef="sid-5d627f9a-4ccb-46c6-a8a9-aeec96cd19f0" targetRef="sid-3150fd84-1990-4493-838f-f36593f7115e"/>
+    <sequenceFlow id="sid-d0cfb453-d091-4bb8-8948-9bc52b2d4cea" sourceRef="sid-3150fd84-1990-4493-838f-f36593f7115e" targetRef="sid-fad98b1e-5a4a-4aee-b350-3818b5b97546"/>
+    <sequenceFlow id="sid-210b9e33-5138-425c-8da0-8e7682b2a04a" sourceRef="sid-fad98b1e-5a4a-4aee-b350-3818b5b97546" targetRef="sid-be3f09bc-c8b2-4fc0-af21-756abccd56ad"/>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_Process">
+    <bpmndi:BPMNPlane bpmnElement="Process" id="BPMNPlane_Process">
+      <bpmndi:BPMNShape id="shape-48d18c69-83fe-4cfe-a63c-aae986edc260" bpmnElement="sid-088114e3-0200-407e-a816-1a4754d971a2">
+        <omgdc:Bounds x="-320.0" y="-25.0" width="30.0" height="30.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape-3a431a03-7e3e-4654-aade-211a88db5a15" bpmnElement="sid-5d627f9a-4ccb-46c6-a8a9-aeec96cd19f0">
+        <omgdc:Bounds x="-215.0" y="-50.0" width="100.0" height="80.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape-1e3e3938-eed7-4084-a732-06183d1d15b2" bpmnElement="sid-3150fd84-1990-4493-838f-f36593f7115e">
+        <omgdc:Bounds x="-60.0" y="-50.0" width="100.0" height="80.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape-c529ed9f-27b7-4bb4-a80f-dea601dcdf5f" bpmnElement="sid-fad98b1e-5a4a-4aee-b350-3818b5b97546">
+        <omgdc:Bounds x="84.99999" y="-50.0" width="100.0" height="80.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape-b21c3be9-55aa-4e82-a056-0de9e42d57cc" bpmnElement="sid-be3f09bc-c8b2-4fc0-af21-756abccd56ad">
+        <omgdc:Bounds x="280.0" y="-25.0" width="30.0" height="30.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="edge-4799487a-2502-4f51-bf6f-20e0b9efd2ac" bpmnElement="sid-db19e6db-eb98-419b-bda1-d7492f8b91c3">
+        <omgdi:waypoint x="-290.0" y="-10.0"/>
+        <omgdi:waypoint x="-215.0" y="-10.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-0bad2b10-c395-482c-8ee4-fe2c1a15d135" bpmnElement="sid-465a9dac-4d1b-4035-8d5e-22f43ce50aa3">
+        <omgdi:waypoint x="-115.0" y="-10.0"/>
+        <omgdi:waypoint x="-60.0" y="-10.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-1c2db86e-6dcb-4ce8-ac8d-9a98b7c6e9f6" bpmnElement="sid-d0cfb453-d091-4bb8-8948-9bc52b2d4cea">
+        <omgdi:waypoint x="40.0" y="-10.0"/>
+        <omgdi:waypoint x="85.0" y="-10.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-aa554204-dbc4-492a-8952-e15709ce3a4a" bpmnElement="sid-210b9e33-5138-425c-8da0-8e7682b2a04a">
+        <omgdi:waypoint x="185.0" y="-10.0"/>
+        <omgdi:waypoint x="280.0" y="-10.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
